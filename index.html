@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Telugu VIP Matrimony - Genuine Matchmaking Since 1980</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 1px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #ef4444;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f97316;
+    }
+
+    /* Radio buttons */
+    input[type=radio] {
+      accent-color: #ef4444;
+    }
+
+    /* Scroll snap container for success stories */
+    .scroll-snap-x {
+      scroll-snap-type: x mandatory;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+    }
+
+    .scroll-snap-item {
+      scroll-snap-align: center;
+      flex: 0 0 auto;
+    }
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background: #fffaf5;
+      
+
+    }
+
+    /* Dark overlay */
+    .overlay {
+      position: fixed;inset:0;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      z-index: 1000;
+    }
+
+    /* Popup box with background image */
+    .ad-box {
+      background: url("assets/popup.jpeg") center/cover; /* sample red-golden bg */
+      background-size: cover;
+      background-position: center;
+      color: #ffd700; /* golden text */
+      padding: 35px 25px;
+      border-radius: 20px;
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.6);
+      position: relative;
+      border: 4px solid #ffd700;
+      animation:popupzoom 0.6s ease forwards;
+    }
+
+    .ad-box h2 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      color: #ffd700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .ad-box p {
+      font-size: 16px;
+      margin-bottom: 12px;
+      color: #fffaf0;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+
+    .highlight {
+      font-size: 22px;
+      font-weight: bold;
+      color: #ffd700;
+    }
+
+    .ad-box button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      background: #ffd700;
+      color: #8b0000;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .ad-box button:hover {
+      background: #e6c200;
+    }
+    @keyframes popupzoom{
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .ripple {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(244, 11, 11, 0.5);
+      animation: ripple 0.6s ease-out;
+      pointer-events: none;
+    }
+    @keyframes ripple {
+      from { transform: scale(0); opacity: 1; }
+      to { transform: scale(5); opacity: 0; }
+    }
+
+  </style>
+</head>
+
+<body class="bg-white antialiased ">
+
+  <!-- HEADER -->
+  <header class="bg-gradient-to-b from-red-600 via-red-600 to-orange-500 sticky top-0 z-50">
+    <nav class="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 py-4">
+      <div class="flex items-center justify-center flex-col">
+        <img class="h-16 w-auto" src="assets/main_logo.jpeg" alt="Telugu VIP Matrimony  logo" />
+        <span class="text-white text-xs mt-1">Genuine in Matchmaking<br />Since 1980</span>
+      </div>
+
+      <div class="space-x-6 text-white font-semibold">
+        <a href="contact.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white">Contact Us</a>
+        <a href="blog.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white">Blog</a>
+        <button id="loginBtn" class="bg-white text-red-600 font-semibold rounded-full px-5 py-2 hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-white">Login</button>
+      </div>
+    </nav>
+  </header>
+  <!--popup-->
+    <div class="overlay" id="adPopup">
+    <div class="ad-box">
+      <h2>✨ Good News ✨</h2>
+      <p>Special Festival Offer for You 🎉</p>
+      <p class="highlight">💖 50% OFF on Registration 💖</p>
+      <p>Valid from <b>1st Sept - 15th Sept</b></p>
+      <button onclick="closeAd()">Claim Now</button>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <main class="lg:flex max-w-7xl mx-auto min-h-screen">
+
+    <!-- Left Section: Couple Image -->
+    <section class="flex-1 relative hidden md:flex justify-center items-center bg-gradient-to-b from-red-800 to-red-600">
+      <img src="assets/image11.jpg" 
+          alt="Wedding Couple" 
+          class="max-h-[90%] rounded-2xl shadow-2xl border-4 border-yellow-400 object-cover" />
+    </section>
+
+    <!-- Right Section Form -->
+    <section class="lg:flex-[0.9] bg-white px-6 sm:px-10 py-12 max-w-lg mx-auto rounded-lg shadow-lg -mt-20 lg:mt-0">
+
+      <form action="#" method="POST" class="space-y-5">
+        <!-- Profile Created By -->
+        <div>
+          <label for="profileCreatedBy" class="block text-sm text-gray-500 mb-1">Profile Created By</label>
+          <select id="profileCreatedBy" name="profileCreatedBy" class="w-full border border-gray-300 rounded-md py-2 px-3 hover:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-800">
+            <option selected disabled>Select</option>
+            <option>Self</option>
+            <option>Parent</option>
+            <option>Sibling</option>
+            <option>Friend</option>
+            <option>Relative</option>
+          </select>
+        </div>
+
+        <!-- Name and Surname -->
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="firstName" class="block text-sm text-gray-500 mb-1">Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Enter Name" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-600 placeholder-gray-400 hover:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500" required />
+          </div>
+          <div>
+            <label for="surname" class="block text-sm text-gray-500 mb-1">Surname</label>
+            <input type="text" id="surname" name="surname" placeholder="Enter surname" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-600 placeholder-gray-400 hover:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500" />
+          </div>
+        </div>
+
+        <!-- Mother Tongue and Caste -->
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="motherTongue" class="block text-sm text-gray-500 mb-1">Mother Tongue</label>
+            <select id="motherTongue" name="motherTongue" class="w-full border border-gray-300 rounded-md py-2 px-3 hover:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-800" required>
+              <option selected disabled>Select</option>
+              <option>Telugu</option>
+              <option>Tamil</option>
+              <option>Kannada</option>
+              <option>Hindi</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="caste" class="block text-sm text-gray-500 mb-1">Caste</label>
+            <select id="caste" name="caste" class="w-full border border-gray-300 rounded-md py-2 px-3 hover:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-800" required>
+              <option selected disabled>Select</option>
+              <option>Kamma</option>
+              <option>Reddy</option>
+              <option>Gowda</option>
+              <option>Pillai</option>
+              <option>Others</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Willing to marry from other community -->
+        <div class="flex items-center space-x-6 my-4">
+          <span class="text-sm text-gray-700 whitespace-nowrap mr-4">Willing to marry from other community?</span>
+          <label class="inline-flex items-center cursor-pointer border border-gray-300 rounded-md px-4 py-2 hover:border-red-500">
+            <input type="radio" name="otherCommunity" value="yes" class="mr-2 accent-red-600" required /> Yes
+          </label>
+          <label class="inline-flex items-center cursor-pointer border border-gray-300 rounded-md px-4 py-2 hover:border-red-500">
+            <input type="radio" name="otherCommunity" value="no" class="mr-2 accent-red-600" /> No
+          </label>
+        </div>
+
+        <!-- Mobile number -->
+        <div>
+          <label for="mobileNumber" class="block text-sm text-gray-500 mb-1">Mobile Number</label>
+          <div class="flex border border-gray-300 rounded-md overflow-hidden hover:border-red-500 focus-within:ring-2 focus-within:ring-red-500 focus-within:border-red-500">
+            <select id="countryCode" name="countryCode" class="bg-white border-r border-gray-300 px-2 text-gray-800 focus:outline-none" aria-label="Select country code for mobile number">
+              <option value="+91" selected>India (+91)</option>
+              <option value="+1">USA (+1)</option>
+              <option value="+44">UK (+44)</option>
+              <option value="+61">Australia (+61)</option>
+              <option value="+81">Japan (+81)</option>
+            </select>
+            <input type="tel" id="mobileNumber" name="mobileNumber" placeholder="Enter your mobile number" class="flex-1 px-3 py-2 text-gray-600 placeholder-gray-400 focus:outline-none" required pattern="[0-9]{10}" title="Enter 10 digit mobile number" />
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label for="email" class="block text-sm text-gray-500 mb-1">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email address" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-600 placeholder-gray-400 hover:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500" required />
+        </div>
+
+        <!-- Password -->
+        <div>
+          <label for="password" class="block text-sm text-gray-500 mb-1">Create Password</label>
+          <div class="relative">
+            <input type="password" id="password" name="password" placeholder="Enter your password" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-600 placeholder-gray-400 hover:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 pr-10" required minlength="6" />
+            <button type="button" id="togglePassword" aria-label="Toggle password visibility" class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-red-600 focus:outline-none">
+              <svg id="eyeOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 block" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3" />
+                <path d="M2 12C3.5 7.5 7 4 12 4s8.5 3.5 10 8c-1.5 4.5-5 8-10 8s-8.5-3.5-10-8z" />
+              </svg>
+              <svg id="eyeClosed" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17.94 17.94A10.06 10.06 0 0 1 12 20C7 20 3 16 2 12a10.06 10.06 0 0 1 3.06-5.94" />
+                <path d="M1 1l22 22" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- reCaptcha placeholder (non-functional in static) -->
+        <div class="mt-5">
+          <div role="checkbox" aria-checked="false" tabindex="0" class="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500">
+            <label class="flex items-center space-x-2 cursor-pointer">
+              <!-- Fake checkbox -->
+              <div class="w-5 h-5 border border-gray-400 rounded-sm flex items-center justify-center" id="recaptchaBox" aria-hidden="true"></div>
+              <span class="text-sm text-gray-800 select-none">I'm not a robot</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Agreements -->
+        <div class="space-y-2 text-gray-700">
+          <label class="inline-flex items-center space-x-2 cursor-pointer">
+            <input type="checkbox" id="smsAgree" name="smsAgree" class="accent-red-600" checked required />
+            <span class="text-sm">I agree to receive SMS from teluguvipmatrimony.com</span>
+          </label>
+          <label class="inline-flex items-center space-x-2 cursor-pointer">
+            <input type="checkbox" id="termsAgree" name="termsAgree" class="accent-red-600" checked required />
+            <span class="text-sm">I agree to the <a href="#terms" class="text-red-600 underline">Terms And Conditions</a> of teluguvipmatrimony.com</span>
+          </label>
+        </div>
+
+        <button type="submit" class="w-full bg-gradient-to-r from-red-600 to-orange-500 text-white font-semibold rounded-full px-6 py-3 hover:from-red-700 hover:to-orange-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1">
+          Register free
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <!-- ABOUT US SECTION -->
+  <section class="max-w-7xl mx-auto text-center my-16 px-6 sm:px-12" id="about">
+    <h2 class="text-red-600 font-semibold uppercase mb-2">About Us</h2>
+    <h3 class="text-3xl font-extrabold mb-6">teluguvipmatrimony.com</h3>
+    <p class="max-w-3xl mx-auto text-gray-600 leading-relaxed">
+      teluguvipmatrimony.com, one of India’s foremost matrimonial portals, takes pride in being the largest online marriage facilitator exclusively dedicated to the Telugu community since 1980 we helped thousands of couples in finding their life partners.
+      As we got recognised as the best matrimony site for Telugu. We expanded our services to the Tamil community and are trying to understand their needs and become the best matrimony site for the Tamil community as well.
+      Being the matrimony in Telugu we understood the needs of different communities and the value people in Telugu states give to marriage. Similarly, as being a trusted matrimony in Tamil we got to understand a different perspective of Tamil culture, rich in heritage and steeped in time-honoured rituals, places a strong emphasis on the sanctity of matrimonial bonds up close we will take them as our guiding pillars moving forward and will give our best services to different communities as we move forward.
+      We view it as a blessing that countless numbers of individuals happily found their happiness with our online matchmaking for their happy marriages. We are also proud of our conviction that "choice making is the first step to matchmaking" for this. To help you sort through our extensive database and generate a "best shortlist," we have created an expert search system. Our shifting ability is embodied by the pigeon symbol in our logo.
+      We are attentive to your demands, which is reflected in the simplicity of registration, the range of our value-added services, the multi-layered protection of member information, and our reasonable prices. We put everything we have into making your wedding a "happily-ever-after" experience because we recognise how important this decision is to you and how it will change your life.
+       telugu vip matrimony Marriages offers offline services. If you'd like, you can register by going in person to any one of our more than 20 branches located in major cities. A simple login and password to teluguvipmatrimony.com will be provided to you, enabling you to access, update, or remove your profile, alter your images, and look up other users. We only need your photo and it must be your most recent photo.
+      telugu vip matrimony Marriages: Bridging Hearts Across Cultures, Where Tradition Meets Technology, and Love Finds Its Home forever.
+    </p>
+
+    <div class="mt-16 flex justify-center gap-24">
+      <div>
+        <img src="assets/image4.jpeg" alt="Logo for Telugu Marriages section from Telugu VIP Matrimony Marriages" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICES SECTIONS -->
+  <section class="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:justify-around gap-16 px-6 md:px-12 my-20">
+    <article class="flex-1 text-gray-900">
+      <h3 class="text-2xl font-extrabold mb-4">Elite Services</h3>
+      <p>
+        This is our personalized, private, and highly elite service for the rich & affluent. Working as a bridge between elite brides and grooms, our trained and experienced Relationship Managers do the partner search and matchmaking activity on your behalf.
+      </p>
+    </article>
+    <figure class="hidden md:block relative h-72 w-72">
+      <img src="assets/image7.jpg" alt="Smiling South Asian couple, woman wearing cream sari with golden embroidery and man wearing blue checkered casual shirt in front of a smooth bright orange blend organic shape background" class="rounded-xl shadow-lg" />
+    </figure>
+  </section>
+
+  <section class="max-w-7xl mx-auto flex flex-col md:flex-row-reverse items-center md:justify-around gap-16 px-6 md:px-12 my-20 bg-gray-50 py-8 rounded-lg">
+    <article class="flex-1 text-gray-900">
+      <h3 class="text-2xl font-extrabold mb-4">Assisted Services</h3>
+      <p>
+        Through our assisted services, our Relationship Managers work closely with you to understand your expectations in detail to search among thousands of profiles and shortlist most suitable ones using advanced tools and their expertise in the field.
+      </p>
+    </article>
+    <figure class="hidden md:block relative h-72 w-72">
+      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/57537fa2-36f7-4e89-bd97-2e0267e7b074.png" alt="Young Indian couple smiling, the woman holding a smartphone with phone app for contact highlighting while man gestures showing the phone happily in front of peach-orange gradient blob shape background" class="rounded-xl shadow-lg" />
+    </figure>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-6 md:px-12 py-12 mb-10 bg-gradient-to-tr from-red-600 via-red-600 to-orange-500 rounded-xl flex items-center justify-center gap-12 text-white">
+    <figure class="relative">
+      <img src="assets/image3.jpeg" alt="Mobile phone mockup with Telugu VIP Matrimony Marriages app login screen and an Indian couple dressed in traditional yellow and cream wedding wear" class="rounded-xl shadow-xl object-contain" />
+      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/da301e29-64bc-4106-8f03-05f9ce3a8682.png" alt="Small circular profile photo of young Indian woman with glasses smiling at camera" class="w-16 h-16 rounded-full absolute top-3 left-3 border-2 border-white object-cover" />
+      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6033477f-b296-47b0-aa44-8aeb210f319a.png" alt="Small circular profile photo of young Indian man with modern hairstyle smiling and looking at camera" class="w-16 h-16 rounded-full absolute bottom-3 right-8 border-2 border-white object-cover" />
+    </figure>
+    <article class="max-w-xl flex flex-col gap-5">
+      <h2 class="text-3xl font-extrabold">Matchmaking at your Fingertips</h2>
+      <p>Say hello to our New & Improved App!</p>
+      <p>We are delighted to announce the launch of our new Mobile Application to give the users a more interactive and superior access to our matchmaking services.</p>
+      <p>Hope you like how the app has turned out!</p>
+      <p>To get started, please remove the previously installed Telugu VIP Matrimony App from your device (s) and install again using the link shared below.</p>
+
+      <div class="flex gap-6">
+        <a href="#" aria-label="Download our app from Google Play Store">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0c604aac-e3c6-43da-ba38-88fc62ab73b5.png" alt="Google Play Store download button" class="h-12 w-auto object-contain" />
+        </a>
+        <a href="#" aria-label="Download our app from Apple App Store">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c9a53bfa-508c-4141-bfd9-702ebdd86916.png" alt="Apple App Store download button" class="h-12 w-auto object-contain" />
+        </a>
+      </div>
+    </article>
+  </section>
+
+  <!-- SUCCESS STORIES -->
+  <section class="max-w-7xl mx-auto px-6 sm:px-12 my-16 text-center">
+    <h2 class="text-3xl font-extrabold mb-4 text-gray-900">Soulmates and their Happy Stories</h2>
+    <p class="max-w-4xl mx-auto text-gray-600 mb-10">
+      They say marriages are made in heaven and to make it a seamless process, we at teluguvipmatrimony.com strive to mix the right-minded people together. We welcome you all to meet the innumerable married couples who have found their dream partner through us and have shared their success stories! We wish them all the very best for a happy and successful married life.
+    </p>
+
+    <div class="relative">
+      <!-- Slider container -->
+      <div id="slider" class="flex transition-transform duration-500 ease-in-out">
+        
+        <!-- Story card 1 -->
+        <div class="min-w-full px-4">
+          <div class="bg-white shadow-lg rounded-lg p-6 max-w-md mx-auto">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1b99d9b6-84d1-454e-a2aa-092fa4320d4e.png"
+              alt="Happy married couple Amulya and Tejaswi"
+              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+            <h4 class="text-center font-semibold mb-2">Amulya & TEJASWI ANANTH</h4>
+            <div class="flex justify-center text-red-600 mb-4">★★★★★</div>
+            <p class="text-gray-700 italic text-sm leading-relaxed">
+              "Telugu VIP  Matrimony gave us the desired partners perfectly. Everything matched like it was destiny's act."
+            </p>
+          </div>
+        </div>
+
+        <!-- Story card 2 -->
+        <div class="min-w-full px-4">
+          <div class="bg-white shadow-lg rounded-lg p-6 max-w-md mx-auto">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cdd77485-b80d-463f-8e2d-6ae1921baa45.png"
+              alt="Happy married couple Bharatidevi and Praveen"
+              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+            <h4 class="text-center font-semibold mb-2">Bharatidevi & Praveen</h4>
+            <div class="flex justify-center text-red-600 mb-4">★★★★★</div>
+            <p class="text-gray-700 italic text-sm leading-relaxed">
+              "Marriage is a lifetime bond between two families as much as between two souls. You paved the way for the union and we'll forever be grateful."
+            </p>
+          </div>
+        </div>
+
+        <!-- Story card 3 -->
+        <div class="min-w-full px-4">
+          <div class="bg-white shadow-lg rounded-lg p-6 max-w-md mx-auto">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/69880d3d-7c94-430f-8129-e425b2419b0c.png"
+              alt="Happy married couple Yamini and Narendra"
+              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+            <h4 class="text-center font-semibold mb-2">Yamini & NARENDRA</h4>
+            <div class="flex justify-center text-red-600 mb-4">★★★★★</div>
+            <p class="text-gray-700 italic text-sm leading-relaxed">
+              "Telugu VIP Matrimony gave us the desired partners perfectly. Everything matched like it was destiny's act."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prev Button -->
+      <button id="prev" class="absolute top-1/2 left-2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow hover:bg-gray-700">
+        &#10094;
+      </button>
+      <!-- Next Button -->
+      <button id="next" class="absolute top-1/2 right-2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow hover:bg-gray-700">
+        &#10095;
+      </button>
+    </div>
+  </section>
+
+
+
+  <!-- BRANCHES -->
+  <section class="max-w-7xl mx-auto px-6 sm:px-12 py-12">
+    <h2 class="text-3xl font-extrabold text-center mb-8">Our Presence Near You</h2>
+    <div class="flex flex-wrap justify-center gap-8 mb-10">
+      <div class="bg-white rounded-lg shadow-lg max-w-xs p-6 text-center space-y-2">
+        <h3 class="text-red-600 font-semibold text-xl">Andhra Pradesh</h3>
+        <p class="text-gray-700 text-sm">+91-9841 282 222</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg max-w-xs p-6 text-center space-y-2">
+        <h3 class="text-red-600 font-semibold text-xl">Telangana</h3>
+        <p class="text-gray-700 text-sm">+91-9390 999 999</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg max-w-xs p-6 text-center space-y-2">
+        <h3 class="text-red-600 font-semibold text-xl">Karnataka</h3>
+        <p class="text-gray-700 text-sm">+91-9341 444 444</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg max-w-xs p-6 text-center space-y-2">
+        <h3 class="text-red-600 font-semibold text-xl">Tamil Nadu</h3>
+        <p class="text-gray-700 text-sm">+91-9383 999 999</p>
+      </div>
+    </div>
+    <div class="text-center">
+      <button class="inline-block border border-red-600 rounded-full px-8 py-2 text-red-600 font-semibold hover:bg-red-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-400">More Branches</button>
+    </div>
+  </section>
+
+  <!-- BRANCHES DETAILS -->
+  <section class="max-w-7xl mx-auto px-6 sm:px-12 py-12 bg-white rounded-xl shadow-lg mb-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700 text-sm">
+      <div>
+        <h4 class="text-red-600 font-semibold mb-2">Community</h4>
+        <p>Kamma | Reddy | Kapu | Padmashali | Mudaliyar | Gowda | Pillai | Balija | ST | Christian | Caste No Bar | Inter Caste | Chettiar | Vanniyar | Adi Dravidar | Second Marrige | Reddiar | Gounder | Kammavar |</p>
+      </div>
+      <div>
+        <h4 class="text-red-600 font-semibold mb-2">Location</h4>
+        <p>Hyderabad Ameerpet | Hyderabad Dilsukhnagar | Hyderabad Kukatpally | Vijayawada | Guntur | Anantapur | Eluru | Nellore | Ongole | Tirupathi | Rajahmundry | Vizag | Chennai Tnagar | Chennai Annanagar | Erode | coimbatore | Madurai | Trichy | Vellore | Bengaluru Shivananda | Bengaluru Jayanagar |</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-gray-200 py-12">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6 sm:px-12 text-gray-800 text-sm">
+
+      <div>
+        <img src="assets/main_logo.jpeg" alt="Kaakateeya Marriages logo in red with tagline Pioneer In Matchmaking Since 1980" class="mb-3" />
+        <p>Pioneer In Matchmaking<br />Since 1980</p>
+      </div>
+
+      <nav class="space-y-4">
+        <h5 class="uppercase font-semibold text-red-600 tracking-wider">Help & Support</h5>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:underline">Help</a></li>
+          <li><a href="#" class="hover:underline">FAQs</a></li>
+          <li><a href="#" class="hover:underline">Feedback</a></li>
+          <li><a href="#" class="hover:underline">Contact us</a></li>
+        </ul>
+      </nav>
+
+      <nav class="space-y-4">
+        <h5 class="uppercase font-semibold text-red-600 tracking-wider">Quick Links</h5>
+        <ul class="space-y-2">
+          <li><a href="#about" class="hover:underline">About Us</a></li>
+          <li><a href="#terms" class="hover:underline">Privacy Policy</a></li>
+          <li><a href="#stories" class="hover:underline">Success Stories</a></li>
+          <li><a href="#terms" class="hover:underline">Terms and Conditions</a></li>
+          <li><a href="#blog" class="hover:underline">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 sm:px-12 mt-12 border-t border-gray-200 pt-6 text-gray-600 text-xs">
+      <p>© 2025 teluguvipmatrimony.com. All rights reserved.</p>
+      <div class="flex space-x-6">
+        <a href="#" aria-label="Twitter" class="text-gray-500 hover:text-blue-400">
+          <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M24 4.557a9.94 9.94 0 0 1-2.828.775A4.942 4.942 0 0 0 23.337 3c-.946.566-2 .974-3.127 1.195a4.92 4.92 0 0 0-8.38 4.482A13.953 13.953 0 0 1 1.64 3.15a4.919 4.919 0 0 0 1.525 6.573A4.892 4.892 0 0 1 .964 9.1v.061a4.923 4.923 0 0 0 3.946 4.827 4.903 4.903 0 0 1-1.292.171c-.315 0-.615-.03-.912-.086a4.933 4.933 0 0 0 4.604 3.417A9.867 9.867 0 0 1 0 19.539a13.915 13.915 0 0 0 7.548 2.212c9.142 0 14.307-7.72 14.307-14.417 0-.22-.004-.439-.015-.656A10.24 10.24 0 0 0 24 4.557z" />
+          </svg>
+        </a>
+        <a href="#" aria-label="Facebook" class="text-gray-500 hover:text-blue-600">
+          <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M22.676 0H1.326C.6 0 0 .592 0 1.326v21.348C0 23.405.6 24 1.326 24H12.82v-9.294H9.692V11.31h3.129v-2.825c0-2.763 1.688-4.274 4.156-4.274 1.186 0 2.207.088 2.503.128v2.9h-1.72c-1.35 0-1.61.641-1.61 1.582v2.074h3.215l-.42 3.396h-2.795V24h5.48c.726 0 1.326-.595 1.326-1.326V1.326C24 .592 23.4 0 22.676 0z" />
+          </svg>
+        </a>
+        <a href="#" aria-label="Instagram" class="text-gray-500 hover:text-pink-600">
+          <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M7.5 2A5.509 5.509 0 0 0 2 7.5V16.5A5.509 5.509 0 0 0 7.5 22H16.5A5.509 5.509 0 0 0 22 16.5V7.5A5.509 5.509 0 0 0 16.5 2H7.5ZM12 7.175A4.825 4.825 0 1 1 7.175 12 4.825 4.825 0 0 1 12 7.175Zm5.5-.675a1.175 1.175 0 1 1-1.175-1.175A1.175 1.175 0 0 1 17.5 6.5Z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LOGIN MODAL -->
+  <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-40 hidden items-center justify-center z-60">
+    <div class="bg-gradient-to-r from-red-600 to-orange-500 rounded-xl w-11/12 max-w-lg p-8 relative shadow-lg animate-fade-in">
+      <button id="closeLogin" aria-label="Close login modal" class="absolute top-4 right-4 text-white hover:text-red-300 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <h2 class="text-2xl font-extrabold text-white mb-6">Member Login</h2>
+      <form>
+        <div class="mb-4">
+          <label for="loginEmail" class="block mb-1 text-white">Email ID / Profile ID / Mobile No</label>
+          <input type="text" id="loginEmail" name="loginEmail" placeholder="Enter Email ID or Profile ID or Mobile No" class="w-full px-4 py-3 rounded border border-white focus:outline-none focus:ring-2 focus:ring-white text-gray-900" />
+        </div>
+        <div class="mb-4 relative">
+          <label for="loginPassword" class="block mb-1 text-white">Password</label>
+          <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter Password" class="w-full px-4 py-3 rounded border border-white focus:outline-none focus:ring-2 focus:ring-white text-gray-900 pr-10" />
+          <button type="button" id="toggleLoginPassword" aria-label="Toggle login password visibility" class="absolute inset-y-0 right-3 flex items-center text-gray-600 hover:text-red-300 focus:outline-none">
+            <svg id="loginEyeOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 block" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3" />
+              <path d="M2 12C3.5 7.5 7 4 12 4s8.5 3.5 10 8c-1.5 4.5-5 8-10 8s-8.5-3.5-10-8z" />
+            </svg>
+            <svg id="loginEyeClosed" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17.94 17.94A10.06 10.06 0 0 1 12 20C7 20 3 16 2 12a10.06 10.06 0 0 1 3.06-5.94" />
+              <path d="M1 1l22 22" />
+            </svg>
+          </button>
+        </div>
+        <button type="submit" class="w-full bg-white text-red-600 font-semibold rounded-full py-3 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-white">Login</button>
+        <div class="mt-4 flex justify-between text-white text-sm">
+          <a href="#" class="hover:underline">Forgot Password?</a>
+          <span>Not a Member? <a href="#" class="underline font-semibold">Sign up FREE</a></span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Password toggle for register form
+    const togglePassword = document.getElementById("togglePassword");
+    const passwordInput = document.getElementById("password");
+    const eyeOpenIcon = document.getElementById("eyeOpen");
+    const eyeClosedIcon = document.getElementById("eyeClosed");
+
+    togglePassword.addEventListener("click", () => {
+      const type = passwordInput.type === "password" ? "text" : "password";
+      passwordInput.type = type;
+      eyeOpenIcon.classList.toggle("hidden");
+      eyeClosedIcon.classList.toggle("hidden");
+    });
+
+    // Password toggle for login form
+    const toggleLoginPassword = document.getElementById("toggleLoginPassword");
+    const loginPasswordInput = document.getElementById("loginPassword");
+    const loginEyeOpenIcon = document.getElementById("loginEyeOpen");
+    const loginEyeClosedIcon = document.getElementById("loginEyeClosed");
+
+    toggleLoginPassword.addEventListener("click", () => {
+      const type = loginPasswordInput.type === "password" ? "text" : "password";
+      loginPasswordInput.type = type;
+      loginEyeOpenIcon.classList.toggle("hidden");
+      loginEyeClosedIcon.classList.toggle("hidden");
+    });
+
+    // Login Modal functionality
+    const loginBtn = document.getElementById("loginBtn");
+    const loginModal = document.getElementById("loginModal");
+    const closeLogin = document.getElementById("closeLogin");
+
+    loginBtn.addEventListener("click", () => {
+      loginModal.classList.remove("hidden");
+      loginModal.classList.add("flex");
+    });
+
+    closeLogin.addEventListener("click", () => {
+      loginModal.classList.add("hidden");
+      loginModal.classList.remove("flex");
+    });
+    document.addEventListener("click", (e) => {
+      let ripple = document.createElement("span");
+      ripple.classList.add("ripple");
+      ripple.style.left = e.pageX + "px";
+      ripple.style.top = e.pageY + "px";
+      document.body.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 600);
+    });
+
+
+    // Close modal on outside click
+    loginModal.addEventListener("click", (e) => {
+      if (e.target === loginModal) {
+        loginModal.classList.add("hidden");
+        loginModal.classList.remove("flex");
+      }
+    });
+    window.onload = function() {
+      document.getElementById("adPopup").style.visibility = "visible";
+    };
+
+    function closeAd() {
+      document.getElementById("adPopup").style.visibility = "hidden";
+    }
+    // Success Stories Slider
+    const slider = document.getElementById("slider");
+    const next = document.getElementById("next");
+    const prev = document.getElementById("prev");
+    const totalSlides = slider.children.length;
+    let index = 0;
+
+    function updateSlide() {
+      slider.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    next.addEventListener("click", () => {
+      index = (index + 1) % totalSlides;
+      updateSlide();
+    });
+
+    prev.addEventListener("click", () => {
+      index = (index - 1 + totalSlides) % totalSlides;
+      updateSlide();
+    });
+  </script>
+
+</body>
+
+</html>
+
